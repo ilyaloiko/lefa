@@ -1,10 +1,15 @@
 import { ChangeDetectionStrategy, Component, computed, effect, OnInit, signal } from '@angular/core';
 import { LettersService } from '../../core/services/letters-service';
 import { Router } from '@angular/router';
+import { Button } from '../../shared/components/button/button';
+import { Disabled } from '../../shared/directives/disabled';
 
 @Component({
   selector: 'app-letters',
-  imports: [],
+  imports: [
+    Button,
+    Disabled
+  ],
   templateUrl: './letters.html',
   styleUrl: './letters.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -15,6 +20,7 @@ export class Letters implements OnInit {
   private readonly letterIndex = signal(0);
 
   readonly letter = computed(() => this.letters[this.letterIndex()]);
+  readonly isStartMode = computed(() => this.letterIndex() === 0);
 
   constructor(
     private readonly lettersService: LettersService,

@@ -2,30 +2,31 @@
 
   <div class="letters-container-header">
     <div class="buttons-container">
-      <div class="button" (click)="menu()">
-        <span class="material-icons">keyboard_arrow_left</span>
-      </div>
-
-      <div class="button" (click)="reset()">
-        <span class="material-icons">refresh</span>
-      </div>
+      <app-button [icon]="'keyboard_arrow_left'"
+                  (clickEventEmitter)="menu()">
+      </app-button>
+      <app-button [icon]="'refresh'"
+                  (clickEventEmitter)="reset()">
+      </app-button>
     </div>
   </div>
 
   <div class="letters-container-content">
     <div class="letter">
-      {{ letter() }}
+      {{ number() }}
     </div>
   </div>
 
   <div class="letters-container-footer">
     <div class="buttons-container gap-30">
-      <div class="button big" (click)="back()">
-        <span class="material-icons">arrow_back</span>
-      </div>
-      <div class="button big" (click)="next()">
-        <span class="material-icons">arrow_forward</span>
-      </div>
+      <app-button [icon]="'arrow_back'"
+                  [class]="'big'"
+                  (clickEventEmitter)="back()">
+      </app-button>
+      <app-button [icon]="'arrow_forward'"
+                  [class]="'big'"
+                  (clickEventEmitter)="next()">
+      </app-button>
     </div>
   </div>
 </div>

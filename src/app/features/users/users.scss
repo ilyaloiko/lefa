@@ -1,0 +1,31 @@
+.users-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.add-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 50%;
+  background-color: lightpink;
+  padding: 10px;
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 50%;
+  background-color: lightpink;
+  padding: 10px;
+}
+
+.user-container {
+  display: flex;
+  gap: 10px;
+}

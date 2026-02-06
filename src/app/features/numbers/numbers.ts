@@ -1,10 +1,13 @@
 import { Component, computed, effect, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { NumbersService } from '../../core/services/numbers-service';
+import { Button } from "../../shared/components/button/button";
 
 @Component({
   selector: 'app-numbers',
-  imports: [],
+    imports: [
+        Button
+    ],
   templateUrl: './numbers.html',
   styleUrl: './numbers.scss',
 })
@@ -12,7 +15,7 @@ export class Numbers {
   private numbers: number[] = [];
   private readonly letterIndex = signal(0);
 
-  readonly letter = computed(() => this.numbers[this.letterIndex()]);
+  readonly number = computed(() => this.numbers[this.letterIndex()]);
 
   constructor(
     private readonly numbersService: NumbersService,
@@ -21,7 +24,7 @@ export class Numbers {
     this.numbers = this.numbersService.getNumbers();
 
     effect(() => {
-      console.log('Letter:', this.letter());
+      console.log('Letter:', this.number());
     });
   }
 

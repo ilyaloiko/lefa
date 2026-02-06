@@ -1,0 +1,26 @@
+<div class="users-container">
+
+  <div class="add-container">
+    <div>Add user {{intervalSignal()}}</div>
+    <input placeholder="Name" [(ngModel)]="name">
+    <div>
+      <button (click)="add()">Add</button>
+    </div>
+  </div>
+
+  <div class="list-container">
+    <div>Users</div>
+
+    <div>
+      <button (click)="deleteAll()">Delete All</button>
+    </div>
+
+    @for (user of users(); track user.id) {
+      <div class="user-container">
+        <div>{{user.name}}</div>
+        <button (click)="delete(user.id)">Delete</button>
+      </div>
+    }
+  </div>
+
+</div>
