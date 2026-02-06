@@ -26,7 +26,8 @@
 .slide {
   color: white;
   cursor: pointer;
-  font-size: 50vh;
+  font-size: 30vmin;
+  line-height: 1;
 
   &:hover {
     animation-name: letter;
