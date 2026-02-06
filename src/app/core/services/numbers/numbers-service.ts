@@ -5,10 +5,10 @@ import { Injectable } from '@angular/core';
 })
 export class NumbersService {
 
-  private numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  private data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-  getNumbers(): number[] {
-    return this.numbers;
+  getData(): number[] {
+    return this.data;
   }
 
 }

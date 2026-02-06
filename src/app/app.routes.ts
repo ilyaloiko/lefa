@@ -4,6 +4,8 @@ import { Menu } from './features/menu/menu';
 import { Numbers } from './features/numbers/numbers';
 import { Counter } from './features/counter/counter';
 import { Users } from './features/users/users';
+import { Words } from './features/words/words';
+import { Syllables } from './features/syllables/syllables';
 
 export const routes: Routes = [
   {
@@ -22,6 +24,14 @@ export const routes: Routes = [
   {
     path: 'numbers',
     component: Numbers,
+  },
+  {
+    path: 'syllables',
+    component: Syllables,
+  },
+  {
+    path: 'words',
+    component: Words,
   },
   {
     path: 'counter',

@@ -8,6 +8,10 @@ body {
   font-family: sans-serif;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .buttons-container {
   display: flex;
   align-items: center;

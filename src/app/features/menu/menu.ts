@@ -22,4 +22,12 @@ export class Menu {
     this.router.navigate(['numbers']);
   }
 
+  onSyllablesClick(): void {
+    this.router.navigate(['syllables']);
+  }
+
+  onWordsClick(): void {
+    this.router.navigate(['words']);
+  }
+
 }

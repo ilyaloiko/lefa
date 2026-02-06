@@ -1,55 +1,23 @@
-import { ChangeDetectionStrategy, Component, computed, effect, OnInit, signal } from '@angular/core';
-import { LettersService } from '../../core/services/letters-service';
-import { Router } from '@angular/router';
-import { Button } from '../../shared/components/button/button';
-import { Disabled } from '../../shared/directives/disabled';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { LettersService } from '../../core/services/letters/letters-service';
+import { Carousel } from '../../shared/components/carousel/carousel';
 
 @Component({
   selector: 'app-letters',
   imports: [
-    Button,
-    Disabled
+    Carousel
   ],
   templateUrl: './letters.html',
   styleUrl: './letters.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class Letters implements OnInit {
+export class Letters {
 
-  private letters: string[] = [];
-  private readonly letterIndex = signal(0);
-
-  readonly letter = computed(() => this.letters[this.letterIndex()]);
-  readonly isStartMode = computed(() => this.letterIndex() === 0);
+  readonly data: string[];
 
   constructor(
-    private readonly lettersService: LettersService,
-    private readonly router: Router
+    private readonly lettersService: LettersService
   ) {
-    this.letters = this.lettersService.getLetters();
-
-    effect(() => {
-      console.log('Letter:', this.letter());
-    });
+    this.data = this.lettersService.getData();
   }
-
-  ngOnInit(): void {
-  }
-
-  back(): void {
-    this.letterIndex.update(i => Math.max(i - 1, 0));
-  }
-
-  next(): void {
-    this.letterIndex.update(i => Math.min(i + 1, this.letters.length - 1));
-  }
-
-  reset(): void {
-    this.letterIndex.set(0);
-  }
-
-  menu(): void {
-    this.router.navigate(['menu']);
-  }
-
 }

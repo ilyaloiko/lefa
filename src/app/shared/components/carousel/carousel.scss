@@ -1,0 +1,39 @@
+.carousel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 30px;
+}
+
+.carousel__header {
+  display: flex;
+  align-items: center;
+}
+
+.carousel__footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.slide {
+  color: white;
+  cursor: pointer;
+  font-size: 50vh;
+
+  &:hover {
+    animation-name: letter;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes letter {
+}

@@ -1,0 +1,32 @@
+<div class="carousel" [ngStyle]="{'background-color': backgroundColor}">
+  <div class="carousel__header">
+    <div class="buttons-container">
+      <app-button [icon]="'keyboard_arrow_left'"
+                  (clickEventEmitter)="menu()">
+      </app-button>
+      <app-button [appDisabled]="isStartMode()"
+                  [icon]="'refresh'"
+                  (clickEventEmitter)="reset()">
+      </app-button>
+    </div>
+  </div>
+
+  <div class="carousel__content">
+    <div class="slide">
+      {{ entity() }}
+    </div>
+  </div>
+
+  <div class="carousel__footer">
+    <div class="buttons-container gap-30">
+      <app-button [icon]="'arrow_back'"
+                  [class]="'big'"
+                  (clickEventEmitter)="back()">
+      </app-button>
+      <app-button [icon]="'arrow_forward'"
+                  [class]="'big'"
+                  (clickEventEmitter)="next()">
+      </app-button>
+    </div>
+  </div>
+</div>
