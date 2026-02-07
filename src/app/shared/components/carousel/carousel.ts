@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, computed, Input, signal } from '@angular/core';
 import { Button } from "../button/button";
-import { Disabled } from '../../directives/disabled';
 import { Router } from '@angular/router';
 import { NgStyle } from '@angular/common';
 
@@ -8,7 +7,6 @@ import { NgStyle } from '@angular/common';
   selector: 'app-carousel',
   imports: [
     Button,
-    Disabled,
     NgStyle
   ],
   templateUrl: './carousel.html',
@@ -17,10 +15,10 @@ import { NgStyle } from '@angular/common';
 })
 export class Carousel {
 
-  @Input() data: (string | number)[] = [];
+  @Input() data: (string)[] = [];
   @Input() backgroundColor: string = '';
 
-  readonly entity = computed(() => this.data[this.index()]);
+  readonly value = computed(() => this.data[this.index()]);
   readonly isStartMode = computed(() => this.index() === 0);
   readonly canBack = computed(() => this.index() !== 0);
   readonly canNext = computed(() => this.index() !== this.data.length - 1);
@@ -46,6 +44,12 @@ export class Carousel {
 
   menu(): void {
     this.router.navigate(['menu']);
+  }
+
+  speak(value: string): void {
+    const utterance = new SpeechSynthesisUtterance(value.toLowerCase());
+    utterance.lang = 'ru-RU';
+    speechSynthesis.speak(utterance);
   }
 
 }

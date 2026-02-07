@@ -13,7 +13,7 @@ import { Carousel } from '../../shared/components/carousel/carousel';
 })
 export class Numbers {
 
-  readonly data: number[];
+  readonly data: string[];
 
   constructor(
     private readonly numbersService: NumbersService

@@ -5,9 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class NumbersService {
 
-  private data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  private data = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
 
-  getData(): number[] {
+  getData(): string[] {
     return this.data;
   }
 

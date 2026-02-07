@@ -12,8 +12,9 @@
   </div>
 
   <div class="carousel__content">
-    <div class="slide">
-      {{ entity() }}
+    @let _value = value();
+    <div class="slide" (click)="speak(_value)">
+      {{ _value }}
     </div>
   </div>
 
