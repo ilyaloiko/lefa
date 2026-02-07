@@ -4,8 +4,8 @@
       <app-button [icon]="'keyboard_arrow_left'"
                   (clickEventEmitter)="menu()">
       </app-button>
-      <app-button [appDisabled]="isStartMode()"
-                  [icon]="'refresh'"
+      <app-button [icon]="'refresh'"
+                  [disabled]="isStartMode()"
                   (clickEventEmitter)="reset()">
       </app-button>
     </div>
@@ -20,11 +20,13 @@
   <div class="carousel__footer">
     <div class="buttons-container gap-30">
       <app-button [icon]="'arrow_back'"
-                  [class]="'big'"
+                  [big]="true"
+                  [disabled]="!canBack()"
                   (clickEventEmitter)="back()">
       </app-button>
       <app-button [icon]="'arrow_forward'"
-                  [class]="'big'"
+                  [big]="true"
+                  [disabled]="!canNext()"
                   (clickEventEmitter)="next()">
       </app-button>
     </div>

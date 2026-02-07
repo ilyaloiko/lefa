@@ -22,6 +22,8 @@ export class Carousel {
 
   readonly entity = computed(() => this.data[this.index()]);
   readonly isStartMode = computed(() => this.index() === 0);
+  readonly canBack = computed(() => this.index() !== 0);
+  readonly canNext = computed(() => this.index() !== this.data.length - 1);
 
   private readonly index = signal(0);
 

@@ -11,7 +11,9 @@ export class Button {
 
   @Input({required: true}) icon: string = '';
 
-  @Input() class: string = '';
+  @Input() disabled: boolean = false;
+
+  @Input() big: boolean = false;
 
   @Output() clickEventEmitter = new EventEmitter();
 

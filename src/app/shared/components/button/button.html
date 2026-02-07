@@ -1,4 +1,6 @@
-<div class="button {{class}}"
+<div class="button"
+     [class.big]="big"
+     [class.disabled]="disabled"
      (click)="onClick()">
   <span class="material-icons">{{ icon }}</span>
 </div>
